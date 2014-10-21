@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Tranformation</name>
+    <name>Transformation_2012</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -66,9 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2014&#x2f;10&#x2f;18 13&#x3a;42&#x3a;53.480</created_date>
+  <created_date>2014&#x2f;10&#x2f;20 21&#x3a;19&#x3a;25.607</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2014&#x2f;10&#x2f;18 13&#x3a;42&#x3a;53.480</modified_date>
+  <modified_date>2014&#x2f;10&#x2f;20 21&#x3a;19&#x3a;25.607</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -96,30 +96,6 @@
     </attributes>
   </connection>
   <connection>
-    <name>Crimes Data</name>
-    <server>localhost</server>
-    <type>H2</type>
-    <access>Native</access>
-    <database>Crime Database</database>
-    <port>9092</port>
-    <username>joao</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>9092</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>NTBD</name>
     <server>localhost</server>
     <type>H2</type>
@@ -144,28 +120,30 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Read Crime Data</from><to>Selecionando valores usados</to><enabled>Y</enabled> </hop>
+  <hop> <from>Datas</from><to>Sort rows 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Districts</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Local</from><to>Sort rows 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Ofensa</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Datas</to><enabled>Y</enabled> </hop>
-  <hop> <from>Read Crime Data</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Read Crime Data</from><to>Districts</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Local</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Ofensa</to><enabled>Y</enabled> </hop>
-  <hop> <from>Read Crime Data</from><to>Districts</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 2</from><to>Unique rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows</from><to>Method Dimension</to><enabled>Y</enabled> </hop>
-  <hop> <from>Ofensa</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows 2</from><to>Offense Dimension</to><enabled>Y</enabled> </hop>
-  <hop> <from>Districts</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 3</from><to>Unique rows 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows 3</from><to>District Dimension</to><enabled>Y</enabled> </hop>
-  <hop> <from>Datas</from><to>Sort rows 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 4</from><to>Unique rows 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows 4</from><to>Time_dimension</to><enabled>Y</enabled> </hop>
-  <hop> <from>Local</from><to>Sort rows 5</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows 5</from><to>Unique rows 5</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows 5</from><to>Local Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Read Crime Data</from><to>Selecionando valores usados</to><enabled>Y</enabled> </hop>
+  <hop> <from>Read Crime Data</from><to>Select values</to><enabled>Y</enabled> </hop>
   <hop> <from>Selecionando valores usados</from><to>Table output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 2</from><to>Unique rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 3</from><to>Unique rows 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 4</from><to>Unique rows 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 5</from><to>Unique rows 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows</from><to>Method Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 2</from><to>Offense Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 3</from><to>District Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 4</from><to>Separando Dia-Mes-Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 5</from><to>Local Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora</from><to>Separando Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Ano&#x2f;Hora</from><to>Time Dimension</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Datas</name>
@@ -279,7 +257,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>527</xloc>
+      <xloc>581</xloc>
       <yloc>206</yloc>
       <draw>Y</draw>
       </GUI>
@@ -317,7 +295,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>322</xloc>
+      <xloc>376</xloc>
       <yloc>475</yloc>
       <draw>Y</draw>
       </GUI>
@@ -354,7 +332,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>426</xloc>
+      <xloc>480</xloc>
       <yloc>209</yloc>
       <draw>Y</draw>
       </GUI>
@@ -392,7 +370,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>650</xloc>
+      <xloc>704</xloc>
       <yloc>204</yloc>
       <draw>Y</draw>
       </GUI>
@@ -430,7 +408,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>605</xloc>
+      <xloc>659</xloc>
       <yloc>475</yloc>
       <draw>Y</draw>
       </GUI>
@@ -468,7 +446,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>46</xloc>
+      <xloc>100</xloc>
       <yloc>445</yloc>
       <draw>Y</draw>
       </GUI>
@@ -507,7 +485,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>279</xloc>
+      <xloc>333</xloc>
       <yloc>212</yloc>
       <draw>Y</draw>
       </GUI>
@@ -549,7 +527,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>193</xloc>
+      <xloc>247</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
       </GUI>
@@ -566,7 +544,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;crime_incidents_2013_CSV.csv</filename>
+    <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;crime_incidents_2012_CSV.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -593,7 +571,7 @@
       </field>
       <field>
         <name>REPORTDATETIME</name>
-        <type>Date</type>
+        <type>String</type>
         <format>MM&#x2f;dd&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
@@ -631,7 +609,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>3</length>
+        <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -653,7 +631,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>52</length>
+        <length>71</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -714,13 +692,13 @@
       </field>
       <field>
         <name>PSA</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
+        <type>String</type>
+        <format/>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>3</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -741,7 +719,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
+        <length>25</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -803,8 +781,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>491</xloc>
-      <yloc>42</yloc>
+      <xloc>532</xloc>
+      <yloc>35</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -901,7 +879,8 @@
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>BLOCKXCOORD</name>
+      <remove>        <name>LASTMODIFIEDDATE</name>
+      </remove>      <remove>        <name>BLOCKXCOORD</name>
       </remove>      <remove>        <name>BLOCKYCOORD</name>
       </remove>      <remove>        <name>ANC</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
@@ -912,7 +891,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>818</xloc>
+      <xloc>872</xloc>
       <yloc>217</yloc>
       <draw>Y</draw>
       </GUI>
@@ -951,7 +930,7 @@
       </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>156</xloc>
+      <xloc>210</xloc>
       <yloc>219</yloc>
       <draw>Y</draw>
       </GUI>
@@ -985,7 +964,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>194</xloc>
+      <xloc>248</xloc>
       <yloc>312</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1019,7 +998,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>58</xloc>
+      <xloc>112</xloc>
       <yloc>262</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1065,7 +1044,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>321</xloc>
+      <xloc>375</xloc>
       <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1105,7 +1084,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>452</xloc>
+      <xloc>506</xloc>
       <yloc>319</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1145,7 +1124,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>602</xloc>
+      <xloc>656</xloc>
       <yloc>313</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1183,54 +1162,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>818</xloc>
+      <xloc>872</xloc>
       <yloc>463</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Time_dimension</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>NTBD</connection>
-    <schema/>
-    <table>TIME_DIMENSION</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>Y</return_keys>
-    <return_field>ID</return_field>
-    <fields>
-        <field>
-          <column_name>REPORTDATETIME</column_name>
-          <stream_name>REPORTDATETIME</stream_name>
-        </field>
-        <field>
-          <column_name>SHIFT</column_name>
-          <stream_name>SHIFT</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>459</xloc>
-      <yloc>478</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1254,7 +1187,7 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>50</xloc>
+      <xloc>104</xloc>
       <yloc>364</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1279,7 +1212,7 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>189</xloc>
+      <xloc>243</xloc>
       <yloc>392</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1308,7 +1241,7 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>325</xloc>
+      <xloc>379</xloc>
       <yloc>395</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1318,7 +1251,7 @@
     <name>Unique rows 4</name>
     <type>Unique</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1335,7 +1268,7 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>451</xloc>
+      <xloc>505</xloc>
       <yloc>392</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1362,8 +1295,147 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>603</xloc>
+      <xloc>657</xloc>
       <yloc>398</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Separando Dia-Mes-Ano&#x2f;Hora</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>REPORTDATETIME</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Month</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Integer</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>2</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Day</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Integer</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>2</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Year_Time</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>15</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>504</xloc>
+      <yloc>479</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Separando Ano&#x2f;Hora</name>
+    <type>StringCut</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Year_Time</in_stream_name>
+        <out_stream_name>Year</out_stream_name>
+        <cut_from>0</cut_from>
+        <cut_to>4</cut_to>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>504</xloc>
+      <yloc>553</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Time Dimension</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>NTBD</connection>
+    <schema/>
+    <table>TIME_DIMENSION</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>N</tablename_in_table>
+    <return_keys>Y</return_keys>
+    <return_field>ID</return_field>
+    <fields>
+        <field>
+          <column_name>Month</column_name>
+          <stream_name>Month</stream_name>
+        </field>
+        <field>
+          <column_name>Day</column_name>
+          <stream_name>Day</stream_name>
+        </field>
+        <field>
+          <column_name>SHIFT</column_name>
+          <stream_name>SHIFT</stream_name>
+        </field>
+        <field>
+          <column_name>Year</column_name>
+          <stream_name>Year</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>502</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
