@@ -130,7 +130,6 @@
   <hop> <from>Read Crime Data</from><to>Ofensa</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Selecionando valores usados</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Selecionando valores usados</from><to>Table output</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2</from><to>Unique rows</to><enabled>Y</enabled> </hop>
@@ -144,6 +143,10 @@
   <hop> <from>Unique rows 5</from><to>Local Dimension</to><enabled>Y</enabled> </hop>
   <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora</from><to>Separando Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
   <hop> <from>Separando Ano&#x2f;Hora</from><to>Time Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Ano&#x2f;Hora 2</from><to>Select values 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora 2</from><to>Separando Ano&#x2f;Hora 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Selecionando valores usados</from><to>Separando Dia-Mes-Ano&#x2f;Hora 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>Table output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Datas</name>
@@ -408,8 +411,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>659</xloc>
-      <yloc>475</yloc>
+      <xloc>710</xloc>
+      <yloc>478</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -937,6 +940,91 @@
     </step>
 
   <step>
+    <name>Separando Ano&#x2f;Hora</name>
+    <type>StringCut</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Year_Time</in_stream_name>
+        <out_stream_name>Year</out_stream_name>
+        <cut_from>0</cut_from>
+        <cut_to>4</cut_to>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>557</xloc>
+      <yloc>582</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Separando Dia-Mes-Ano&#x2f;Hora</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>REPORTDATETIME</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Month</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Integer</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>2</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Day</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Integer</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>2</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>Year_Time</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>15</length>
+        <precision>0</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>554</xloc>
+      <yloc>487</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Sort rows</name>
     <type>SortRows</type>
     <description/>
@@ -1084,8 +1172,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>506</xloc>
-      <yloc>319</yloc>
+      <xloc>556</xloc>
+      <yloc>327</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1124,8 +1212,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
-      <yloc>313</yloc>
+      <xloc>707</xloc>
+      <yloc>316</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1162,8 +1250,62 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>872</xloc>
-      <yloc>463</yloc>
+      <xloc>843</xloc>
+      <yloc>587</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Time Dimension</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>NTBD</connection>
+    <schema/>
+    <table>TIME_DIMENSION</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>N</tablename_in_table>
+    <return_keys>Y</return_keys>
+    <return_field>ID</return_field>
+    <fields>
+        <field>
+          <column_name>Month</column_name>
+          <stream_name>Month</stream_name>
+        </field>
+        <field>
+          <column_name>Day</column_name>
+          <stream_name>Day</stream_name>
+        </field>
+        <field>
+          <column_name>SHIFT</column_name>
+          <stream_name>SHIFT</stream_name>
+        </field>
+        <field>
+          <column_name>Year</column_name>
+          <stream_name>Year</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>551</xloc>
+      <yloc>688</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1268,8 +1410,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>505</xloc>
-      <yloc>392</yloc>
+      <xloc>555</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1295,14 +1437,41 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>657</xloc>
-      <yloc>398</yloc>
+      <xloc>708</xloc>
+      <yloc>401</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Separando Dia-Mes-Ano&#x2f;Hora</name>
+    <name>Separando Ano&#x2f;Hora 2</name>
+    <type>StringCut</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Year_Time</in_stream_name>
+        <out_stream_name>Year</out_stream_name>
+        <cut_from>0</cut_from>
+        <cut_to>4</cut_to>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>993</xloc>
+      <yloc>402</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Separando Dia-Mes-Ano&#x2f;Hora 2</name>
     <type>FieldSplitter</type>
     <description/>
     <distribute>Y</distribute>
@@ -1353,15 +1522,15 @@
         <trimtype>none</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>504</xloc>
-      <yloc>479</yloc>
+      <xloc>1003</xloc>
+      <yloc>313</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Separando Ano&#x2f;Hora</name>
-    <type>StringCut</type>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1370,72 +1539,12 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>Year_Time</in_stream_name>
-        <out_stream_name>Year</out_stream_name>
-        <cut_from>0</cut_from>
-        <cut_to>4</cut_to>
-      </field>
-    </fields>
-     <cluster_schema/>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>Year_Time</name>
+      </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>504</xloc>
-      <yloc>553</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Time Dimension</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>NTBD</connection>
-    <schema/>
-    <table>TIME_DIMENSION</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>N</tablename_in_table>
-    <return_keys>Y</return_keys>
-    <return_field>ID</return_field>
-    <fields>
-        <field>
-          <column_name>Month</column_name>
-          <stream_name>Month</stream_name>
-        </field>
-        <field>
-          <column_name>Day</column_name>
-          <stream_name>Day</stream_name>
-        </field>
-        <field>
-          <column_name>SHIFT</column_name>
-          <stream_name>SHIFT</stream_name>
-        </field>
-        <field>
-          <column_name>Year</column_name>
-          <stream_name>Year</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>502</xloc>
-      <yloc>656</yloc>
+      <xloc>919</xloc>
+      <yloc>530</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

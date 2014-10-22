@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Transformation_2011</name>
+    <name>Transformation_2008</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -66,9 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2014&#x2f;10&#x2f;20 21&#x3a;38&#x3a;20.103</created_date>
+  <created_date>2014&#x2f;10&#x2f;21 20&#x3a;14&#x3a;39.064</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2014&#x2f;10&#x2f;20 21&#x3a;38&#x3a;20.103</modified_date>
+  <modified_date>2014&#x2f;10&#x2f;21 20&#x3a;14&#x3a;39.064</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -123,14 +123,16 @@
   <hop> <from>Datas</from><to>Sort rows 4</to><enabled>Y</enabled> </hop>
   <hop> <from>Districts</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Local</from><to>Sort rows 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Metodo</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Ofensa</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Datas</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Districts</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Local</to><enabled>Y</enabled> </hop>
+  <hop> <from>Read Crime Data</from><to>Metodo</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Ofensa</to><enabled>Y</enabled> </hop>
   <hop> <from>Read Crime Data</from><to>Selecionando valores usados</to><enabled>Y</enabled> </hop>
-  <hop> <from>Read Crime Data</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Ano&#x2f;Hora</from><to>Time Dimension</to><enabled>Y</enabled> </hop>
+  <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora</from><to>Separando Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2</from><to>Unique rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 3</from><to>Unique rows 3</to><enabled>Y</enabled> </hop>
@@ -141,8 +143,6 @@
   <hop> <from>Unique rows 3</from><to>District Dimension</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows 4</from><to>Separando Dia-Mes-Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows 5</from><to>Local Dimension</to><enabled>Y</enabled> </hop>
-  <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora</from><to>Separando Ano&#x2f;Hora</to><enabled>Y</enabled> </hop>
-  <hop> <from>Separando Ano&#x2f;Hora</from><to>Time Dimension</to><enabled>Y</enabled> </hop>
   <hop> <from>Separando Ano&#x2f;Hora 2</from><to>Select values 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Separando Dia-Mes-Ano&#x2f;Hora 2</from><to>Separando Ano&#x2f;Hora 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Selecionando valores usados</from><to>Separando Dia-Mes-Ano&#x2f;Hora 2</to><enabled>Y</enabled> </hop>
@@ -159,109 +159,31 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>CCN</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>REPORTDATETIME</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SHIFT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>OFFENSE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>METHOD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>LASTMODIFIEDDATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKSITEADDRESS</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKXCOORD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKYCOORD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>WARD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ANC</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DISTRICT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PSA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NEIGHBORHOODCLUSTER</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCK_GROUP</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CENSUS_TRACT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>VOTING_PRECINCT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>START_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>END_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>CCN</name>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>NID</name>
+      </remove>      <remove>        <name>CCN</name>
       </remove>      <remove>        <name>OFFENSE</name>
       </remove>      <remove>        <name>METHOD</name>
       </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
       </remove>      <remove>        <name>BLOCKSITEADDRESS</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
       </remove>      <remove>        <name>WARD</name>
       </remove>      <remove>        <name>ANC</name>
+      </remove>      <remove>        <name>SMD</name>
       </remove>      <remove>        <name>DISTRICT</name>
       </remove>      <remove>        <name>PSA</name>
       </remove>      <remove>        <name>NEIGHBORHOODCLUSTER</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>609</xloc>
-      <yloc>212</yloc>
+      <xloc>553</xloc>
+      <yloc>205</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -298,8 +220,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>404</xloc>
-      <yloc>481</yloc>
+      <xloc>348</xloc>
+      <yloc>474</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -316,27 +238,29 @@
            <schema_name/>
            </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>CCN</name>
+      <remove>        <name>NID</name>
+      </remove>      <remove>        <name>CCN</name>
       </remove>      <remove>        <name>REPORTDATETIME</name>
       </remove>      <remove>        <name>SHIFT</name>
       </remove>      <remove>        <name>OFFENSE</name>
       </remove>      <remove>        <name>METHOD</name>
       </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
       </remove>      <remove>        <name>BLOCKSITEADDRESS</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
       </remove>      <remove>        <name>ANC</name>
+      </remove>      <remove>        <name>SMD</name>
       </remove>      <remove>        <name>NEIGHBORHOODCLUSTER</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>508</xloc>
-      <yloc>215</yloc>
+      <xloc>452</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -353,28 +277,30 @@
            <schema_name/>
            </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>CCN</name>
+      <remove>        <name>NID</name>
+      </remove>      <remove>        <name>CCN</name>
       </remove>      <remove>        <name>REPORTDATETIME</name>
       </remove>      <remove>        <name>SHIFT</name>
       </remove>      <remove>        <name>OFFENSE</name>
       </remove>      <remove>        <name>METHOD</name>
       </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
       </remove>      <remove>        <name>WARD</name>
       </remove>      <remove>        <name>ANC</name>
+      </remove>      <remove>        <name>SMD</name>
       </remove>      <remove>        <name>DISTRICT</name>
       </remove>      <remove>        <name>PSA</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>732</xloc>
-      <yloc>210</yloc>
+      <xloc>676</xloc>
+      <yloc>203</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -411,8 +337,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>687</xloc>
-      <yloc>481</yloc>
+      <xloc>631</xloc>
+      <yloc>474</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -449,8 +375,49 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
-      <yloc>451</yloc>
+      <xloc>72</xloc>
+      <yloc>444</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Metodo</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>NID</name>
+      </remove>      <remove>        <name>CCN</name>
+      </remove>      <remove>        <name>REPORTDATETIME</name>
+      </remove>      <remove>        <name>SHIFT</name>
+      </remove>      <remove>        <name>OFFENSE</name>
+      </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
+      </remove>      <remove>        <name>BLOCKSITEADDRESS</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
+      </remove>      <remove>        <name>WARD</name>
+      </remove>      <remove>        <name>ANC</name>
+      </remove>      <remove>        <name>SMD</name>
+      </remove>      <remove>        <name>DISTRICT</name>
+      </remove>      <remove>        <name>PSA</name>
+      </remove>      <remove>        <name>NEIGHBORHOODCLUSTER</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
+      </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>182</xloc>
+      <yloc>218</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -467,29 +434,31 @@
            <schema_name/>
            </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>CCN</name>
+      <remove>        <name>NID</name>
+      </remove>      <remove>        <name>CCN</name>
       </remove>      <remove>        <name>REPORTDATETIME</name>
       </remove>      <remove>        <name>SHIFT</name>
       </remove>      <remove>        <name>METHOD</name>
       </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
       </remove>      <remove>        <name>BLOCKSITEADDRESS</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
       </remove>      <remove>        <name>WARD</name>
       </remove>      <remove>        <name>ANC</name>
+      </remove>      <remove>        <name>SMD</name>
       </remove>      <remove>        <name>DISTRICT</name>
       </remove>      <remove>        <name>PSA</name>
       </remove>      <remove>        <name>NEIGHBORHOODCLUSTER</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>361</xloc>
-      <yloc>218</yloc>
+      <xloc>305</xloc>
+      <yloc>211</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -530,8 +499,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>275</xloc>
-      <yloc>470</yloc>
+      <xloc>219</xloc>
+      <yloc>463</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -547,7 +516,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;crime_incidents_2011_CSV.csv</filename>
+    <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;crime_incidents_2008_CSV.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -561,6 +530,17 @@
     <newline_possible>N</newline_possible>
     <encoding/>
     <fields>
+      <field>
+        <name>NID</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
       <field>
         <name>CCN</name>
         <type>Integer</type>
@@ -590,7 +570,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>8</length>
+        <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -601,7 +581,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>26</length>
+        <length>12</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -612,7 +592,7 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>6</length>
+        <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -634,41 +614,63 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>71</length>
+        <length>43</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>BLOCKXCOORD</name>
-        <type>Number</type>
+        <name>LATITUDE</name>
+        <type>String</type>
         <format>&#x23;.&#x23;</format>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>10</precision>
+        <precision>14</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>BLOCKYCOORD</name>
-        <type>Number</type>
+        <name>LONGITUDE</name>
+        <type>String</type>
         <format>&#x23;.&#x23;</format>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>10</precision>
+        <precision>14</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CITY</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>10</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>STATE</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>WARD</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
+        <type>String</type>
+        <format/>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>4</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -678,7 +680,18 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>2</length>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SMD</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>4</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -700,19 +713,52 @@
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>3</length>
+        <length>4</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>NEIGHBORHOODCLUSTER</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
+        <type>String</type>
+        <format/>
         <currency>&#x24;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HOTSPOT2006NAME</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>33</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HOTSPOT2005NAME</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>33</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HOTSPOT2004NAME</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>20</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -726,66 +772,11 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
-      <field>
-        <name>BLOCK_GROUP</name>
-        <type>String</type>
-        <format/>
-        <currency>&#x24;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>8</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>CENSUS_TRACT</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
-        <currency>&#x24;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>VOTING_PRECINCT</name>
-        <type>String</type>
-        <format/>
-        <currency>&#x24;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>12</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>START_DATE</name>
-        <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
-        <currency>&#x24;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>END_DATE</name>
-        <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
-        <currency>&#x24;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>560</xloc>
-      <yloc>41</yloc>
+      <xloc>504</xloc>
+      <yloc>34</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -801,140 +792,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>CCN</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>REPORTDATETIME</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SHIFT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>OFFENSE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>METHOD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>LASTMODIFIEDDATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKSITEADDRESS</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKXCOORD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCKYCOORD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>WARD</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ANC</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DISTRICT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PSA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NEIGHBORHOODCLUSTER</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BLOCK_GROUP</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CENSUS_TRACT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>VOTING_PRECINCT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>START_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>END_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>LASTMODIFIEDDATE</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
-      </remove>      <remove>        <name>ANC</name>
-      </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
-      </remove>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>900</xloc>
-      <yloc>223</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>CCN</name>
-      </remove>      <remove>        <name>REPORTDATETIME</name>
-      </remove>      <remove>        <name>SHIFT</name>
-      </remove>      <remove>        <name>OFFENSE</name>
+      <remove>        <name>NID</name>
       </remove>      <remove>        <name>LASTMODIFIEDDATE</name>
-      </remove>      <remove>        <name>BLOCKSITEADDRESS</name>
-      </remove>      <remove>        <name>BLOCKXCOORD</name>
-      </remove>      <remove>        <name>BLOCKYCOORD</name>
-      </remove>      <remove>        <name>WARD</name>
+      </remove>      <remove>        <name>LATITUDE</name>
+      </remove>      <remove>        <name>LONGITUDE</name>
+      </remove>      <remove>        <name>CITY</name>
+      </remove>      <remove>        <name>STATE</name>
       </remove>      <remove>        <name>ANC</name>
-      </remove>      <remove>        <name>DISTRICT</name>
-      </remove>      <remove>        <name>PSA</name>
-      </remove>      <remove>        <name>NEIGHBORHOODCLUSTER</name>
+      </remove>      <remove>        <name>SMD</name>
+      </remove>      <remove>        <name>HOTSPOT2006NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2005NAME</name>
+      </remove>      <remove>        <name>HOTSPOT2004NAME</name>
       </remove>      <remove>        <name>BUSINESSIMPROVEMENTDISTRICT</name>
-      </remove>      <remove>        <name>BLOCK_GROUP</name>
-      </remove>      <remove>        <name>CENSUS_TRACT</name>
-      </remove>      <remove>        <name>VOTING_PRECINCT</name>
-      </remove>      <remove>        <name>START_DATE</name>
-      </remove>      <remove>        <name>END_DATE</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>238</xloc>
-      <yloc>225</yloc>
+      <xloc>844</xloc>
+      <yloc>216</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -960,8 +834,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>532</xloc>
-      <yloc>559</yloc>
+      <xloc>476</xloc>
+      <yloc>552</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1018,8 +892,8 @@
         <trimtype>none</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>532</xloc>
-      <yloc>485</yloc>
+      <xloc>476</xloc>
+      <yloc>478</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1052,8 +926,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>276</xloc>
-      <yloc>318</yloc>
+      <xloc>220</xloc>
+      <yloc>311</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1086,8 +960,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>140</xloc>
-      <yloc>268</yloc>
+      <xloc>84</xloc>
+      <yloc>261</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1132,8 +1006,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>403</xloc>
-      <yloc>306</yloc>
+      <xloc>347</xloc>
+      <yloc>299</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1172,8 +1046,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>534</xloc>
-      <yloc>325</yloc>
+      <xloc>478</xloc>
+      <yloc>318</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1212,8 +1086,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>684</xloc>
-      <yloc>319</yloc>
+      <xloc>628</xloc>
+      <yloc>312</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1250,8 +1124,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>863</xloc>
-      <yloc>534</yloc>
+      <xloc>844</xloc>
+      <yloc>462</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1304,8 +1178,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>530</xloc>
-      <yloc>662</yloc>
+      <xloc>474</xloc>
+      <yloc>655</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1329,8 +1203,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>132</xloc>
-      <yloc>370</yloc>
+      <xloc>76</xloc>
+      <yloc>363</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1354,8 +1228,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>271</xloc>
-      <yloc>398</yloc>
+      <xloc>215</xloc>
+      <yloc>391</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1383,8 +1257,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>407</xloc>
-      <yloc>401</yloc>
+      <xloc>351</xloc>
+      <yloc>394</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1410,8 +1284,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>533</xloc>
-      <yloc>398</yloc>
+      <xloc>477</xloc>
+      <yloc>391</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1437,8 +1311,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>685</xloc>
-      <yloc>404</yloc>
+      <xloc>629</xloc>
+      <yloc>397</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1464,8 +1338,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1019</xloc>
-      <yloc>371</yloc>
+      <xloc>996</xloc>
+      <yloc>332</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1522,8 +1396,8 @@
         <trimtype>none</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1029</xloc>
-      <yloc>282</yloc>
+      <xloc>1006</xloc>
+      <yloc>243</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1543,8 +1417,8 @@
       <remove>        <name>Year_Time</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>945</xloc>
-      <yloc>499</yloc>
+      <xloc>922</xloc>
+      <yloc>460</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

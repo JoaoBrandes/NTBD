@@ -132,8 +132,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>77</xloc>
-      <yloc>78</yloc>
+      <xloc>63</xloc>
+      <yloc>288</yloc>
       </entry>
     <entry>
       <name>Transformation 2013</name>
@@ -165,24 +165,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>223</xloc>
-      <yloc>83</yloc>
-      </entry>
-    <entry>
-      <name>SQL</name>
-      <description/>
-      <type>SQL</type>
-      <sql>&#xd;&#xa;INSERT INTo tabela_fato&#x28;ccn,method_key,local_key, offense_key,time_key ,district_key&#x29;&#xd;&#xa;select main.ccn, m.id, l.id, o.id, t.date_key, d.id  &#xd;&#xa;from Crimes_Table as main, Method_Dimension as m,Local_Dimension as l,Offense_Dimension as o,&#xd;&#xa;TIME_DIMENSION as t, District_Dimension as d&#xd;&#xa;WHERE main.REPORTDATETIME &#x3d; t.REPORTDATETIME and main.SHIFT &#x3d; t.SHIFT and main.OFFENSE &#x3d; o.OFFENSE and main.METHOD &#x3d; m.METHOD and&#xd;&#xa;main.BLOCKSITEADDRESS &#x3d; l.BLOCKSITEADDRESS and main.NEIGHBORHOODCLUSTER &#x3d; l .NEIGHBORHOODCLUSTER and &#xd;&#xa;main.DISTRICT &#x3d; d.DISTRICT and main.PSA &#x3d; d.PSA&#x3b; </sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>T</sendOneStatement>
-      <connection>Crime_Data</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>782</xloc>
-      <yloc>73</yloc>
+      <xloc>219</xloc>
+      <yloc>76</yloc>
       </entry>
     <entry>
       <name>Transformation 2012</name>
@@ -283,17 +267,218 @@
       <xloc>661</xloc>
       <yloc>72</yloc>
       </entry>
+    <entry>
+      <name>Transformation 2009</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;Transformations&#x5c;Transformation_2009.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>818</xloc>
+      <yloc>103</yloc>
+      </entry>
+    <entry>
+      <name>Transformation 2008</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;Transformations&#x5c;Transformation_2008.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>694</xloc>
+      <yloc>210</yloc>
+      </entry>
+    <entry>
+      <name>Transformation 2007</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;Transformations&#x5c;Transformation_2007.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>537</xloc>
+      <yloc>221</yloc>
+      </entry>
+    <entry>
+      <name>Transformation 2006</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Users&#x5c;JoaoEduardo&#x5c;Desktop&#x5c;New folder&#x5c;Transformations&#x5c;Transformation_2006.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>388</xloc>
+      <yloc>236</yloc>
+      </entry>
+    <entry>
+      <name>Check Db connections</name>
+      <description/>
+      <type>CHECK_DB_CONNECTIONS</type>
+      <connections>
+        <connection>
+          <name>NTBD</name>
+          <waitfor>0</waitfor>
+          <waittime>millisecond</waittime>
+        </connection>
+      </connections>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>69</xloc>
+      <yloc>189</yloc>
+      </entry>
+    <entry>
+      <name>Create Database</name>
+      <description/>
+      <type>SQL</type>
+      <sql>Create Database NTBD&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>70</xloc>
+      <yloc>76</yloc>
+      </entry>
+    <entry>
+      <name>Table exists</name>
+      <description/>
+      <type>TABLE_EXISTS</type>
+      <tablename>Tabela_Fato</tablename>
+      <schemaname/>
+      <connection>NTBD</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>258</xloc>
+      <yloc>211</yloc>
+      </entry>
+    <entry>
+      <name>Create Tabela_Fato</name>
+      <description/>
+      <type>SQL</type>
+      <sql>Create Table Tabela_Fato&#x28;&#xd;&#xa;ccn varchar&#x28;10&#x29;,&#xd;&#xa;method_key INTEGER,&#xd;&#xa;local_key INTEGER, &#xd;&#xa;offense_key INTEGER,&#xd;&#xa;time_key INTEGER,&#xd;&#xa;district_key INTEGER&#xd;&#xa;&#x29;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>NTBD</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>174</xloc>
+      <yloc>280</yloc>
+      </entry>
+    <entry>
+      <name>Popula Tabela Fato 2</name>
+      <description/>
+      <type>SQL</type>
+      <sql>&#xd;&#xa;INSERT INTo tabela_fato&#x28;ccn,method_key,local_key, offense_key,time_key ,district_key&#x29;&#xd;&#xa;select main.ccn, m.id, l.id, o.id, t.id, d.id  &#xd;&#xa;from main_table as main, Method_Dimension as m,Local_Dimension as l,Offense_Dimension as o,&#xd;&#xa;TIME_DIMENSION as t, District_Dimension as d&#xd;&#xa;WHERE main.year &#x3d; t.year and main.month &#x3d; t.month and main.day &#x3d; t.day and main.SHIFT &#x3d; t.SHIFT and main.OFFENSE &#x3d; o.OFFENSE and main.METHOD &#x3d; m.METHOD and&#xd;&#xa;main.BLOCKSITEADDRESS &#x3d; l.BLOCKSITEADDRESS and main.NEIGHBORHOODCLUSTER &#x3d; l .NEIGHBORHOODCLUSTER and &#xd;&#xa;main.DISTRICT &#x3d; d.DISTRICT and main.PSA &#x3d; d.PSA&#x3b; </sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>T</sendOneStatement>
+      <connection>NTBD</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>302</xloc>
+      <yloc>326</yloc>
+      </entry>
   </entries>
   <hops>
-    <hop>
-      <from>START</from>
-      <to>Transformation 2013</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>Transformation 2013</from>
       <to>Transformation 2012</to>
@@ -315,6 +500,114 @@
     <hop>
       <from>Transformation 2011</from>
       <to>Transformation 2010</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation 2010</from>
+      <to>Transformation 2009</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation 2009</from>
+      <to>Transformation 2008</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation 2008</from>
+      <to>Transformation 2007</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation 2007</from>
+      <to>Transformation 2006</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Check Db connections</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Check Db connections</from>
+      <to>Transformation 2013</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check Db connections</from>
+      <to>Create Database</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create Database</from>
+      <to>Transformation 2013</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation 2006</from>
+      <to>Table exists</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Table exists</from>
+      <to>Create Tabela_Fato</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Table exists</from>
+      <to>Popula Tabela Fato 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create Tabela_Fato</from>
+      <to>Popula Tabela Fato 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
